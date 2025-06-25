@@ -66,6 +66,26 @@ This repository tracks everything I’ve completed so far — from Python fundam
 
 ---
 
+### ⚙️ Multithreading, Multiprocessing & Optimization
+- Difference Between Process and Thread
+- Practical Implementation of:
+  - Multithreading with `threading`
+  - Multiprocessing with `multiprocessing`
+  - `ThreadPoolExecutor` and `ProcessPoolExecutor`
+- Web scraping using multithreading
+- Memory allocation, garbage collection, and Python best practices
+
+---
+
+### 🌐 Web Development with Flask
+- Introduction to Flask Framework
+- Creating and Routing Simple Flask Apps
+- Integrating HTML with Flask using Jinja2 Templating
+- Handling HTTP Requests: GET, POST, PUT, DELETE
+- Dynamic URL Routing with Flask
+- Building REST APIs from scratch using Flask
+
+---
 
 ## 📌 Connect with Me
 **Name:** Mohammed Misba
