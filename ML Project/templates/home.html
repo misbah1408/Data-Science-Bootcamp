@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DATA INPUT FORM</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      form {
+        max-width: 500px;
+        margin: auto;
+      }
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px;
+        width: 100%;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>ENVIRONMENTAL DATA ENTRY</h2>
+    <form action="{{ url_for('predict_data') }}" method="POST">
+      <label for="TEMPERATURE">TEMPERATURE</label>
+      <input
+        type="text"
+        id="TEMPERATURE"
+        name="TEMPERATURE"
+        step="any"
+        required
+      />
+
+      <label for="RH">Relative Humidity</label>
+      <input type="text" id="RH" name="RH" step="any" required />
+
+      <label for="Ws">Wind speed</label>
+      <input type="text" id="WS" name="WS" step="any" required />
+
+      <label for="RAIN">RAIN</label>
+      <input type="text" id="RAIN" name="Rain" step="any" required />
+
+      <label for="FFMC">Fine Fuel Moisture Code</label>
+      <input type="text" id="FFMC" name="FFMC" step="any" required />
+
+      <label for="DMC">Duff Moisture Code</label>
+      <input type="text" id="DMC" name="DMC" step="any" required />
+
+      <label for="ISI">Initial Spread Index</label>
+      <input type="text" id="ISI" name="ISI" step="any" required />
+
+      <label for="CLASSES">CLASSES</label>
+      <select id="CLASSES" name="Classes" required>
+        <option value="">SELECT CLASS</option>
+        <option value="1">Fire</option>
+        <option value="0">Not Fire</option>
+      </select>
+
+      <label for="REGION">REGION</label>
+      <select id="REGION" name="Region" required>
+        <option value="">SELECT REGION</option>
+        <option value="0">Bejaia Region</option>
+        <option value="1">Sidi-Bel Abbes</option>
+      </select>
+
+      <button type="submit">PREDICT</button>
+    </form>
+
+    <h1>Predicted Fire Weather Index (FWI): {{result}}</h1>
+    <!-- <script>
+      document.getElementById("dataForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+
+            const formData = new FormData(this);
+            const data = {};
+
+            for (const [key, value] of formData.entries()) {
+                data[key.toUpperCase()] = value;
+            }
+
+            console.log("=== FORM SUBMITTED ===");
+            console.log(data);
+        });
+    </script> -->
+  </body>
+</html>
